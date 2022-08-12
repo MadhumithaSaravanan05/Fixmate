@@ -25,6 +25,7 @@ public class Users {
 	@Column(unique=true)
 	private String email;
 	private String password;
+	private String bb;
 
 
 	@OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
