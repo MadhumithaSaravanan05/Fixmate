@@ -25,13 +25,13 @@ public class ProfessionalServiceimpl implements ProfessionalServices {
 		return this.dao.findAll();
 	}
 	@Override
-	public String addProfessional(Professionals professional) {
+	public String addProfessional(Professionals prof) {
 		
 
 
-		boolean emailAlreadyExists = dao.existsUserByEmail(professional.getEmail());
-		boolean userNameAlreadyExists = dao.existsUserByUsername(professional.getUsername());
-        boolean mobileAlreadyExists = dao.existsUserByMobile(professional.getMobile());
+		boolean emailAlreadyExists = dao.existsUserByEmail(prof.getEmail());
+		boolean userNameAlreadyExists = dao.existsUserByUsername(prof.getUsername());
+        boolean mobileAlreadyExists = dao.existsUserByMobile(prof.getMobile());
 
         if (emailAlreadyExists) {
             return "Email";
@@ -43,7 +43,8 @@ public class ProfessionalServiceimpl implements ProfessionalServices {
 			return "Username";
 		}
         try {
-            dao.save(professional);
+        	
+            dao.save(prof);
             return "Success";
         } catch (Exception e) {
             return "Error";

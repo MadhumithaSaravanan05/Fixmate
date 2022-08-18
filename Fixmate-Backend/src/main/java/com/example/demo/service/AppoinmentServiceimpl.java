@@ -4,6 +4,7 @@ import com.example.demo.config.SecurityUtils;
 import com.example.demo.repository.AppoinmentRepository;
 import com.example.demo.repository.PackageRepository;
 import com.example.demo.repository.UserRepository;
+
 import com.example.demo.entity.Appoinment;
 import com.example.demo.entity.Package;
 import com.example.demo.entity.Users;
@@ -32,9 +33,19 @@ public class AppoinmentServiceimpl implements com.example.demo.service.Appoinmen
         appoinment.setBookingStatus("no");
         appoinment.setServiceStatus("no");
         appoinment.setFinalPay("no");
-        appoinment.setCharges("null");
-        this.appoinmentDao.save(appoinment);
     
+        this.appoinmentDao.save(appoinment);
+        //adding to center
+        List<Package> packages = this.packageDao.findAll();
+        for(Package x:packages){
+            if(Objects.equals(x.getId(),appoinment.getSc_id())){
+                System.out.println(appoinment.getSc_id());
+                x.getAppoinments().add(appoinment);
+                this.packageDao.save(x);
+            }
+        }
+        
+        
         //adding to user
         List<Users> users = this.dao.findAll();
         for(Users y:users){

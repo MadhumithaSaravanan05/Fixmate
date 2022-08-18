@@ -22,9 +22,8 @@ public class ProfessionalController {
 	}
 
 	
-	@PostMapping("/profsignup")
+	@PostMapping("/prof-register")
 	public String addProfessional(@RequestBody Professionals prof) {
-		//user.setRole("user");
 		return this.Prof.addProfessional(prof);
 	}
 	

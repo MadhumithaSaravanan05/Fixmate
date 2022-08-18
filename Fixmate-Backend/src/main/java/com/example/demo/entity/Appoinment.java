@@ -22,7 +22,12 @@ public class Appoinment {
 
 
    
-    private String problemStatement;
+    private String doorNumber;
+    private String street;
+    private String city;
+    private String state;
+    private String pincode;
+    private String landmark;
     private String contactNumber;
     private String bookingDate;
     private String bookingTime;

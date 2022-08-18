@@ -25,16 +25,14 @@ public class Users {
 	@Column(unique=true)
 	private String email;
 	private String password;
-	private String bb;
+	
 
 
 	@OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
 	@JoinColumn(name="user_id", referencedColumnName = "id")
 	List<com.example.demo.entity.Appoinment> appoinments = new ArrayList<>();
 
-	@OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
-	@JoinColumn(name="user_id", referencedColumnName = "id")
-	List<com.example.demo.entity.Package> packages = new ArrayList<>();
+	
 
 
 
