@@ -21,7 +21,7 @@ public class Appoinment {
     private long sc_id;
 
 
-   
+    private String packageName;
     private String doorNumber;
     private String street;
     private String city;
