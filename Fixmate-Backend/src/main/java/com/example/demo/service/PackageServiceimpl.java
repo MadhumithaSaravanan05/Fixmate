@@ -24,8 +24,13 @@ public class PackageServiceimpl implements com.example.demo.service.PackageServi
 
 	@Override
 	public String addPackage(Package pack) {
-		packDao.save(pack);
-		return "success";
+	
+		try {
+            packDao.save(pack);
+            return "Success";
+        } catch (Exception e) {
+            return "Error";
+        }
 	}
 	@Override
 	public List<Package> viewAllPackage() {
@@ -55,7 +60,7 @@ public class PackageServiceimpl implements com.example.demo.service.PackageServi
 		return pack;
 	}
 	@Override
-	public String updatePackage(Package pack) {
+	public Package updatePackage(Package pack) {
 		Optional<Package> packTemp = this.packDao.findById(pack.getId());
 		Package pack1 = packTemp.orElseThrow(()->new RuntimeException("No suh data found"));
 		List<Package> packs = viewAllPackage();
@@ -73,8 +78,11 @@ public class PackageServiceimpl implements com.example.demo.service.PackageServi
 
 
 		this.packDao.save(pack1);
-		return "success";
+		return (pack1);
 
 	}
+	
+	
+	
 
 }

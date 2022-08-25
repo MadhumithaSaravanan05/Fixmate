@@ -33,6 +33,11 @@ public class RatingController {
     public List<Rating> getRatingsbyUser(){
         return this.ratingService.getRatingsbyUser();
     }
+    
+    @GetMapping("/getPackageRating/{id}")
+    public List<Rating> getRatingsbyPackage(@PathVariable String id){
+        return this.ratingService.getRatingbyPackage(Long.parseLong(id));
+    }
 
     @PutMapping("/editRating")
     public Rating editRating(@RequestBody Rating rating){

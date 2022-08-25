@@ -12,6 +12,7 @@ import lombok.Data;
 public class Rating {
     @Id
     private long book_id;
+    
 
     private int starCount;
     private String experience;

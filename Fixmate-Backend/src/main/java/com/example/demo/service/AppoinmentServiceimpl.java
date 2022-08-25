@@ -75,10 +75,9 @@ public class AppoinmentServiceimpl implements com.example.demo.service.Appoinmen
 
     @Override
     public Appoinment editAppoinment(Appoinment appoinment) {
-        appoinment.setPaymentDone("yes");
-        appoinment.setBookingStatus("accept");
+        appoinment.setPaymentDone("no");
+        appoinment.setBookingStatus("no");
         appoinment.setServiceStatus("no");
-        appoinment.setCharges("null");
         appoinment.setFinalPay("no");
         this.appoinmentDao.save(appoinment);
         return appoinment;

@@ -48,7 +48,26 @@ public class RatingServiceimpl implements RatingService{
     public List<Rating> getRatings() {
         return this.ratingDao.findAll();
     }
-
+    
+    @Override
+    public List<Rating> getRatingbyPackage(long id) {
+        List<Package> center = this.packageServices.viewAllPackage();
+        List<Appoinment> appoinments = new ArrayList<>();
+        List<Rating> ratings = new ArrayList<>();
+        for(Package x:center){
+            if(x.getId()==id){
+                appoinments = x.getAppoinments();
+            }
+        }
+        for(Appoinment y:appoinments){
+            if(Objects.isNull(y.getRating())){
+               continue;
+            }
+            ratings.add(y.getRating());
+        }
+        return ratings;
+    }
+    
 
     @Override
     public List<Rating> getRatingsbyUser() {

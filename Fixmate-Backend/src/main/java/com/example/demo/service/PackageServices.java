@@ -15,6 +15,8 @@ public interface PackageServices {
 
 	Package deletePackage(long id);
 
-	String updatePackage(Package pack);
+	Package updatePackage(Package pack);
+	
+	
 
 }

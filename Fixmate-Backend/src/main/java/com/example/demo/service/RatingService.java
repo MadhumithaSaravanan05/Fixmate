@@ -10,7 +10,7 @@ public interface RatingService {
 
     List<Rating> getRatings();
 
-    
+    List<Rating> getRatingbyPackage(long id);
 
     List<Rating> getRatingsbyUser();
 

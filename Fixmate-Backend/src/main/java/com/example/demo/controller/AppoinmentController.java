@@ -23,7 +23,7 @@ public class AppoinmentController {
     public List<Appoinment> getAppoinments(){
         return this.Appoinments.allAppoinments();
     }
-
+  
     @GetMapping("/getAppoinments/user")
     public List<Appoinment> getUserAppoinments(){
         return this.Appoinments.getUserAppoinments();

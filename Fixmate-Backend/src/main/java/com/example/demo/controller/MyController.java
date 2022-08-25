@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 
 
+import com.example.demo.entity.Appoinment;
 import com.example.demo.entity.Login;
 import com.example.demo.entity.Users;
 
@@ -53,10 +54,12 @@ public class MyController {
 
 	@PutMapping("/editUser")
 	public Users editUser(@RequestBody Users user){
-		this.User.editUser(user);
-		return user;
+		return this.User.editUser(user);
+		
 	}
 
+	
+	
 	@DeleteMapping("/deleteUser/{id}")
 	public Users deleteUser(@PathVariable String id){
 		return this.User.deleteUser(Long.parseLong(id));

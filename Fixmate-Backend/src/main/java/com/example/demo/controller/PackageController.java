@@ -48,7 +48,8 @@ public class PackageController {
 		return deleted;
 	}
 	@PutMapping("/updatePackage")
-		public String updatePackage(@RequestBody Package pack) {
+		public Package updatePackage(@RequestBody Package pack) {
 			return this.packageService.updatePackage(pack);
 		}
+	
 }
