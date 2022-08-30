@@ -51,6 +51,8 @@ public class UserServiceimpl implements UserServices {
 	}
 
 
+
+	
 	@Override
 	public Users editUser(Users user) {
 		Optional<Users> userTemp = this.dao.findById(user.getId());
@@ -59,9 +61,9 @@ public class UserServiceimpl implements UserServices {
 		user1.setUsername(user.getUsername());
 		user1.setEmail(user.getEmail());
 		user1.setMobile(user.getMobile());
+		user1.setPassword(user.getPassword());
 		return this.dao.save(user1);
 	}
-
 	@Override
 	public Users deleteUser(long id) {
 		List<Users> users = getUser();

@@ -52,10 +52,11 @@ public class MyController {
 
 
 
+	
 	@PutMapping("/editUser")
 	public Users editUser(@RequestBody Users user){
-		return this.User.editUser(user);
-		
+		this.User.editUser(user);
+		return user;
 	}
 
 	
