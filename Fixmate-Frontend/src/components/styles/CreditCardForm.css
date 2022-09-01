@@ -1,0 +1,31 @@
+.App-temp{
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url(../assets/1.png);
+  height: 120vh;
+  background-size: 100% 100%;
+  
+  }
+  .container-credit {
+      
+      margin-top: 2%;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .formDiv {
+        background-color: white;
+      width: 400px;
+      padding: 30px;
+      border-radius: 10px;
+      -webkit-box-shadow: -1px 8px 15px 0px rgba(0, 0, 0, 0.44);
+      -moz-box-shadow: -1px 8px 15px 0px rgba(0, 0, 0, 0.44);
+      box-shadow: -1px 8px 15px 0px rgba(0, 0, 0, 0.44);
+    }
+    
+    .alert {
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .creditCard{
+        margin-bottom: 10%;
+    }
