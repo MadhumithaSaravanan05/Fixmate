@@ -1,0 +1,22 @@
+
+
+
+.my-container h1{
+    font-weight:normal;
+    font-size:30px;
+    position:relative;
+    margin-bottom:30px;
+    
+    }
+    .my-container h1::before{
+    content: '';
+    position:absolute;
+    width:100px;
+    height:3px;
+    
+    background-color:crimson;
+    bottom:-10px;
+    left:50%;
+    transform:translatex(-50%);
+    animation: animate 4s linear infinite;
+    }
