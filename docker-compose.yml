@@ -1,0 +1,32 @@
+services:
+  back-end:
+    build:
+      context: Fixmate-Backend
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    environment: 
+      DB_URL: jdbc:mysql://mysql-container/fixmate_project
+      DB_USERNAME: root
+      DB_PASSWORD: madhumitha
+    depends_on:
+      - mysql-container
+  front-end:
+    build:
+      context: Fixmate-Frontend
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    depends_on: 
+      - back-end
+  mysql-container:
+    image: mysql:latest
+    volumes:
+      - dbdata:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: fixmate_project
+      MYSQL_ROOT_PASSWORD: madhumitha
+      MYSQL_USER: root
+      MYSQL_PASSWORD: madhumitha
+volumes:
+  dbdata:
